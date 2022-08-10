@@ -23,10 +23,10 @@ Icarus Verilog is an implementation of the Verilog hardware description language
 GTKWave is a VCD waveform viewer based on the GTK library. This viewer support VCD and LXT formats for signal dumps. Waveform dumps are written by the Icarus Verilog runtime program vvp. The user uses $dumpfile and $dumpvars system tasks to enable waveform dumping, then the vvp runtime takes care of the rest. 
 
 To download iVerilog and GTKWave in Ubuntu, use the following commands:
-'''
+```
 sudo apt-get update
 sudo apt-get install iverilog gtkwave
-'''
+```
 
 ## Nmigen : 
 Despite being faster than schematics entry, hardware design with Verilog and VHDL remains tedious and inefficient for several reasons. Nmigen enables hardware designers to take advantage of the richness of the Python language—object oriented programming, function parameters, generators, operator overloading, libraries, etc.—to build well organized, reusable and elegant designs.
