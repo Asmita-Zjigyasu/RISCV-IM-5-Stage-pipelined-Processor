@@ -7,7 +7,6 @@ RISC-V has been designed to support extensive customization and specialization. 
 **RISC-V base instruction format is shown below** : 
 ![Image](https://github.com/Asmita-Zjigyasu/RISCV-IM-5-Stage-pipelined-Processor/blob/main/Images/riscv%20instruction%20description.gif "RISC-V base instruction formats")
 
-**RISC-V base instruction set is shown below** :
 ![Image](https://github.com/Asmita-Zjigyasu/RISCV-IM-5-Stage-pipelined-Processor/blob/main/Images/riscv%20instructions%20set.gif "RISC-V base instruction set") 
 
 # Design Description
