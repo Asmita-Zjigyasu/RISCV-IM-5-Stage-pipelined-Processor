@@ -67,12 +67,12 @@ The processor has been tested on several C programs, providing the correct outpu
 * Madhav Rao, Associate Professor, IIIT Bangalore 
 
 # Contact Information
-* Mayank Kabra, 
-* Asmita Zjigyasu
-* Saketh Gajawada
-* Yathin Kumar
-* Oishi Seth 
-* 
+* [Mayank Kabra](mailto:Mayank.Kabra@iiitb.ac.in?subject=[GitHub]%20ASIC%20Course)
+* [Asmita Zjigyasu](mailto:Asmita.Zjigyasu@iiitb.ac.in?subject=[GitHub]%20ASIC%20Course)
+* [Saketh Gajawada](mailto:Saketh.Gajawada@iiitb.ac.in?subject=[GitHub]%20ASIC%20Course)
+* [Yathin Kumar](mailto:Yathin.Kumar@iiitb.ac.in?subject=[GitHub]%20ASIC%20Course)
+* [Oishi Seth](mailto:Oishi.Seth@iiitb.ac.in?subject=[GitHub]%20ASIC%20Course)
+
 # References
 * [GNU Toolchain and RISCV overview](https://github.com/shivanishah269/risc-v-core)
 * [RISCV Manual](https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf)
