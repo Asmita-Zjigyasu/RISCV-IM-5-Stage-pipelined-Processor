@@ -1,20 +1,20 @@
 # RISCV-IM-5-Stage-pipelined-Processor
-This repository describes the information needed to build your RISC-V pipelined core, which has support of base interger RV32I instruction format and Multiplication instruction format using Nmigen. 
+This repository describes the information needed to build a five-stage RISC-V pipelined core, which has the upport of base interger RV32I instruction format and Multiplication instruction format using Nmigen. 
 
 # Introduction 
-
+RISC-V has been designed to support extensive customization and specialization. The base integer ISA can be extended with one or more optional instruction-set extensions, but the base integer instructions cannot be redefined. We have implemented the Multiplication extension of the same, taking into consideration stalling, forwarding and branching for optimized utilisation of the space and clock cycles.
 
 # Design Description
-1. 5 stage pipelined processor based on RISCV architecture, which supports Integer arithematic operations and has been extended to accomodate Multiplication set of instructions as well.
+1. This is a 5 stage pipelined processor based on RISCV architecture, which supports Integer arithematic operations and has been extended to accomodate Multiplication set of instructions as well.
 2. The processor has been coded in Nmigen library of Python. This has been done because Python is very easy to understand. The Nmigen code can be converted to Verilog by 2 commands, which are stated ahead.
 3. The 5 stages in the processor are - fetch, decode, execute, memory, writeback. All the stages are integrated using a Wrapper module.
 4. This is a 32 bit processor with 1024 memory locations of both instruction memory and data memory.
-5. Implemented stall, forwarding and branching conditions while taking care of majority of the corner cases by performing extensive program testing. Several C programs have been converted to RISCV assembly using the RISCV GNU Toolchain and have been tested on the processor code with successful results. The C programs range from a simple ADD program (c=a+b) to a merge sort program for sorting 7 numbers.
+5. It includes implementation of stall, forwarding and branching conditions while taking care of majority of the corner cases by performing extensive program testing. Several C programs have been converted to RISCV assembly using the RISCV GNU Toolchain and have been tested on the processor code with successful results. The C programs range from a simple ADD program (c=a+b) to a merge sort program for sorting 7 numbers.
 6. Few of the many RV32I base instruction set descriptions can be found in the screenshot below:
 //image of the riscv instruction set//
 
-# Application 
-
+# Application
+We plan to use the processor to build a full-fleged System on Chip design. This can be used to build a RISCduino if the correct and compatible peripherals are integrated with the processor. The RISCV procossor will be the core of the mocro-controller.
 
 # Block Diagram
 
@@ -58,11 +58,11 @@ processor work. It can be majorly divided into 4 units.
 The processor has been tested on several C programs, providing the correct output. The complete testing process has been expalined in [this document](https://docs.google.com/document/d/1JXD6lvziDR5GNDnnr6U30ztoxr11s2_hYlZX54NLtvs/edit?usp=sharing).
 
 # Contibutors
-* Mayank Kabra
-* Asmita Zjigyasu
-* Saketh Gajawada
-* Yathin Kumar
-* Oishi Seth
+* Mayank Kabra, Student, IIIT Bangalore
+* Asmita Zjigyasu, Student, IIIT Bangalore
+* Saketh Gajawada, Student, IIIT Bangalore
+* Yathin Kumar, Student, IIIT Bangalore
+* Oishi Seth, Student, IIIT Bangalore
 
 # Acknowledgements
 * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
@@ -75,6 +75,7 @@ The processor has been tested on several C programs, providing the correct outpu
 * [Saketh Gajawada](mailto:Saketh.Gajawada@iiitb.ac.in?subject=[GitHub]%20ASIC%20Course)
 * [Yathin Kumar](mailto:Yathin.Kumar@iiitb.ac.in?subject=[GitHub]%20ASIC%20Course)
 * [Oishi Seth](mailto:Oishi.Seth@iiitb.ac.in?subject=[GitHub]%20ASIC%20Course)
+* [Kunal Ghosh](kunalghosh@gmail.com)
 
 # References
 * [GNU Toolchain and RISCV overview](https://github.com/shivanishah269/risc-v-core)
