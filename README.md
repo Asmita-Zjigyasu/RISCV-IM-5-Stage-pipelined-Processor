@@ -30,7 +30,11 @@ sudo apt-get install iverilog gtkwave
 
 ## Nmigen : 
 Despite being faster than schematics entry, hardware design with Verilog and VHDL remains tedious and inefficient for several reasons. Nmigen enables hardware designers to take advantage of the richness of the Python language—object oriented programming, function parameters, generators, operator overloading, libraries, etc.—to build well organized, reusable and elegant designs.
+To install Nmigen, follow the steps in the [Robert Baruch Nmigen Installation repository](https://pages.github.com/](https://github.com/RobertBaruch/nmigen-tutorial/blob/master/1_install.md).
 
+## GNU Toolchain : 
+The GNU Toolchain is a set of programming tools in Linux systems that programmers can use to make and compile their code to produce a program or library. So, here we use the RISCV GNU Toolchain to generate the RISCV Assembly for any C code. 
+RISCV GNU Toolchain can be installed from [this repository](https://github.com/shivanishah269/risc-v-core#overview-of-gnu-compiler-toolchain).
 
 
 # Functional characteristics
