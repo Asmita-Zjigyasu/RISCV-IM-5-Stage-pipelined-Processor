@@ -52,13 +52,33 @@ processor work. It can be majorly divided into 4 units.
 3. **Stalling Unit**: The functionality of this unit is to wait when there are dependencies between the instructions. It introduces NOP instruction between the instructions which have dependencies.
 4. **Flushing Unit**: As this is a pipelined processor, by the time when the branching condition is checked in the EX stage, 2 instructions are already fetched. If the branch is taken, which is decided at the start of the MEM stage, the 3 fetched instructions need to be flushed out by the Flushing unit so that unnecessary changes are not made to the memory or register file.
 
+The processor has been tested on several C programs, providing the correct output. The complete testing process has been expalined in [this document](https://docs.google.com/document/d/1JXD6lvziDR5GNDnnr6U30ztoxr11s2_hYlZX54NLtvs/edit?usp=sharing).
+
 # Contibutors
+* Mayank Kabra
+* Asmita Zjigyasu
+* Saketh Gajawada
+* Yathin Kumar
+* Oishi Seth
 
 # Acknowledgements
+* Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
+* Nanditha Rao, Assisstant Professor, IIIT Bangalore 
+* Madhav Rao, Associate Professor, IIIT Bangalore 
 
-# Conatact Information
-
+# Contact Information
+* Mayank Kabra, 
+* Asmita Zjigyasu
+* Saketh Gajawada
+* Yathin Kumar
+* Oishi Seth 
+* 
 # References
+* [GNU Toolchain and RISCV overview](https://github.com/shivanishah269/risc-v-core)
+* [RISCV Manual](https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf)
+* [Robert Baruch Nmigen Tutorial](https://github.com/RobertBaruch/nmigen-tutorial)
+* [Function calls](https://github.com/riscv-collab/riscv-gnu-toolchain/issues/1088)
+
 
 
 
