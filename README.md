@@ -73,8 +73,6 @@ The processor has been tested on several C programs, providing the correct outpu
 
 # Acknowledgements
 * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
-* Nanditha Rao, Assisstant Professor, IIIT Bangalore 
-* Madhav Rao, Associate Professor, IIIT Bangalore 
 
 # Contact Information
 * [Mayank Kabra](mailto:Mayank.Kabra@iiitb.ac.in?subject=[GitHub]%20ASIC%20Course)
