@@ -1,10 +1,10 @@
 # RISCV-IM-5-Stage-pipelined-Processor
 This repository describes the information needed to build your RISC-V pipelined core, which has support of base interger RV32I instruction format and Multiplication instruction format using Nmigen. 
 
-#Introduction 
+# Introduction 
 
 
-#Design Description
+# Design Description
 1. 5 stage pipelined processor based on RISCV architecture, which supports Integer arithematic operations and has been extended to accomodate Multiplication set of instructions as well.
 2. The processor has been coded in Nmigen library of Python. This has been done because Python is very easy to understand. The Nmigen code can be converted to Verilog by 2 commands, which are stated ahead.
 3. The 5 stages in the processor are - fetch, decode, execute, memory, writeback. All the stages are integrated using a Wrapper module.
@@ -13,9 +13,9 @@ This repository describes the information needed to build your RISC-V pipelined 
 6. Few of the many RV32I base instruction set descriptions can be found in the screenshot below:
 //image of the riscv instruction set//
 
-#Block Diagram
+# Block Diagram
 
-#Tool installation Details
+# Tool installation Details
 1. iVerilog : Icarus Verilog is an implementation of the Verilog hardware description language.
 
 2. GTKWave : GTKWave is a VCD waveform viewer based on the GTK library. This viewer support VCD and LXT formats for signal dumps. Waveform dumps are written by the Icarus Verilog runtime program vvp. The user uses $dumpfile and $dumpvars system tasks to enable waveform dumping, then the vvp runtime takes care of the rest. 
@@ -23,7 +23,7 @@ This repository describes the information needed to build your RISC-V pipelined 
 
 
 
-#Functional characteristics
+# Functional characteristics
 1. STAGES:
   1. **Instruction Fetch**: IF module takes Program Counter as Input from Wrapper module and gives out the 32-bit Instruction which will be forwarded to the Decode stage for processing.
   2. **Decode (ID)**: RV32IM has 7 types of instructions namely R, I, S, B, U, J, and M types differentiated by opcodes. According to each type, the source register, destination register and/or immediate field are extracted from the instruction. The extracted data is passed to Execute Stage.
@@ -38,13 +38,13 @@ processor work. It can be majorly divided into 4 units.
   3. **Stalling Unit**: The functionality of this unit is to wait when there are dependencies between the instructions. It introduces NOP instruction between the instructions which have dependencies.
   4. **Flushing Unit**: As this is a pipelined processor, by the time when the branching condition is checked in the EX stage, 2 instructions are already fetched. If the branch is taken, which is decided at the start of the MEM stage, the 3 fetched instructions need to be flushed out by the Flushing unit so that unnecessary changes are not made to the memory or register file.
 
-#Contibutors
+# Contibutors
 
-#Acknowledgements
+# Acknowledgements
 
-#Conatact Information
+# Conatact Information
 
-#References
+# References
 
 
 
