@@ -55,6 +55,9 @@ Run the following commands on terminal to run the verilog file with testbench to
 4. gtkwave test.vcd
 ```
 
+## Screenshot
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv-im-5-stage/blob/main/Images/Simulation_program1.png)
+
 # Functional characteristics
 ![Image](https://github.com/Asmita-Zjigyasu/RISCV-IM-5-Stage-pipelined-Processor/blob/main/Images/stages.gif)
 ## STAGES:
