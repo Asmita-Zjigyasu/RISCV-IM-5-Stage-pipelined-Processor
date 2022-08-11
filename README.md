@@ -49,11 +49,10 @@ RISCV GNU Toolchain can be installed from [this repository](https://github.com/s
 Run the following commands on terminal to run the verilog file with testbench to get a .vcd file output:
 
 ```
-1. python3 Wrapper_class.py 
-2. wrapper.v  
-3. iverilog wrapper.v test.v 
-4. ./a.out 
-5. gtkwave test.vcd
+1. python3 Wrapper_class.py>wrapper.v  
+2. iverilog wrapper.v test.v 
+3. ./a.out 
+4. gtkwave test.vcd
 ```
 
 # Functional characteristics
