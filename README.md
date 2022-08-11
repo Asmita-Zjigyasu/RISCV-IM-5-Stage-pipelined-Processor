@@ -45,6 +45,16 @@ To install Nmigen, follow the steps in the [Robert Baruch Nmigen Installation re
 The GNU Toolchain is a set of programming tools in Linux systems that programmers can use to make and compile their code to produce a program or library. So, here we use the RISCV GNU Toolchain to generate the RISCV Assembly for any C code.\
 RISCV GNU Toolchain can be installed from [this repository](https://github.com/shivanishah269/risc-v-core#overview-of-gnu-compiler-toolchain).
 
+# Functional Simulation
+Run the following commands on terminal to run the verilog file with testbench to get a .vcd file output:
+
+```
+1. python3 Wrapper_class.py 
+2. wrapper.v  
+3. iverilog wrapper.v test.v 
+4. ./a.out 
+5. gtkwave test.vcd
+```
 
 # Functional characteristics
 ![Image](https://github.com/Asmita-Zjigyasu/RISCV-IM-5-Stage-pipelined-Processor/blob/main/Images/stages.gif)
