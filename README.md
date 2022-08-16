@@ -19,7 +19,7 @@ RISC-V has been designed to support extensive customization and specialization. 
 //image of the riscv instruction set//
 
 # Application
-We plan to use the processor to build a full-fleged System on Chip design. This can be used to build a RISCduino if the correct and compatible peripherals are integrated with the processor. The RISCV procossor will be the core of the mocro-controller.
+We plan to use the processor to build a full-fleged System on Chip design. This can be used to build a RISCduino if the correct and compatible peripherals are integrated with the processor. The RISCV procossor will be the core of the micro-controller.
 
 # Block Diagram
 ![Image](https://github.com/Asmita-Zjigyasu/RISCV-IM-5-Stage-pipelined-Processor/blob/main/Images/block%20diagram.gif)
@@ -101,7 +101,9 @@ The processor has been tested on several C programs, providing the correct outpu
 script yosys_run.sh
 ```
 6. We can view the statistics of the netlist by typing "stat".
-
+## Screenshots of the statistics of our design iiitb_riscv32im5
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/stat1.png)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/stat2.png)
 
 # Contibutors
 * Mayank Kabra, Student, IIIT Bangalore
