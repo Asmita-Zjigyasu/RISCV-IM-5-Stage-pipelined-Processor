@@ -76,6 +76,33 @@ processor work. It can be majorly divided into 4 units.
 
 The processor has been tested on several C programs, providing the correct output. The complete testing process has been expalined in [this document](https://docs.google.com/document/d/1JXD6lvziDR5GNDnnr6U30ztoxr11s2_hYlZX54NLtvs/edit?usp=sharing).
 
+#Synthesis
+##Yosys installation for Ubuntu
+1. Clone the [this](https://github.com/YosysHQ/yosys) GitHub repository.
+2. Execute the following set of commands
+```
+1. make
+2. sudo apt install make
+3. sudo apt-get install build-essential clang bison flex \
+    libreadline-dev gawk tcl-dev libffi-dev git \
+    graphviz xdot pkg-config python3 libboost-system-dev \
+    libboost-python-dev libboost-filesystem-dev zlib1g-dev
+4 . make
+5. sudo make install.
+
+```
+##Steps for generating the netlist
+1. Clone [this](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop) GitHub repository
+2. Change the yosys_run.sh script with your design. 
+3. Check the reference script in this repo.
+4. Type yosys in the terminal which opens an interactive command shell.
+5. Execute the following command which synthesizes your design and generates a gate-level netlist.
+```
+script yosys_run.sh
+```
+6. We can view the statistics of the netlist by typing stat.
+
+
 # Contibutors
 * Mayank Kabra, Student, IIIT Bangalore
 * Asmita Zjigyasu, Student, IIIT Bangalore
