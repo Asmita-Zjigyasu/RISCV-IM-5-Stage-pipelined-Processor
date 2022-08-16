@@ -76,8 +76,8 @@ processor work. It can be majorly divided into 4 units.
 
 The processor has been tested on several C programs, providing the correct output. The complete testing process has been expalined in [this document](https://docs.google.com/document/d/1JXD6lvziDR5GNDnnr6U30ztoxr11s2_hYlZX54NLtvs/edit?usp=sharing).
 
-#Synthesis
-##Yosys installation for Ubuntu
+# Synthesis:
+## Yosys installation for Ubuntu
 1. Clone the [this](https://github.com/YosysHQ/yosys) GitHub repository.
 2. Execute the following set of commands
 ```
@@ -91,7 +91,7 @@ The processor has been tested on several C programs, providing the correct outpu
 5. sudo make install.
 
 ```
-##Steps for generating the netlist
+## Steps for generating the netlist
 1. Clone [this](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop) GitHub repository
 2. Change the yosys_run.sh script with your design. 
 3. Check the reference script in this repo.
@@ -100,7 +100,7 @@ The processor has been tested on several C programs, providing the correct outpu
 ```
 script yosys_run.sh
 ```
-6. We can view the statistics of the netlist by typing stat.
+6. We can view the statistics of the netlist by typing "stat".
 
 
 # Contibutors
