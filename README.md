@@ -56,7 +56,7 @@ Run the following commands on terminal to run the verilog file with testbench to
 ```
 
 ## Screenshot
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv-im-5-stage/blob/main/Images/Simulation_program1.png)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/Pre-synthesis_simulation.png)
 
 # Functional characteristics
 ![Image](https://github.com/Asmita-Zjigyasu/RISCV-IM-5-Stage-pipelined-Processor/blob/main/Images/stages.gif)
