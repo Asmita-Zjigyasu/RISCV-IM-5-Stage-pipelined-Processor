@@ -301,7 +301,7 @@ $ ./flow.tcl -interactive
 This command will take you into the tcl console. In the tcl console type the following commands:
 ```
 % package require openlane 0.9
-% prep -design iiitb_riscv32im5.v
+% prep -design iiitb_riscv32im5
 ```
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/layout3.jpeg)
 
