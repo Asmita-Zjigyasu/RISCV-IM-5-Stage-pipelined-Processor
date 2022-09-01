@@ -247,13 +247,25 @@ plot y vs time a
 ## Rise time and Fall time
 Four timing parameters are used to characterize the inverter standard cell:
 1. Rise time: Time taken for the output to rise from 20% of max value to 80% of max value
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/rise_time.jpeg)
+```
+Rise time = (2.23843 - 2.17935) = 59.08ps
+```
+
 2. Fall time- Time taken for the output to fall from 80% of max value to 20% of max value
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/fall_time.jpeg)
+```
+Fall time = (4.09291 - 4.05004) = 42.87ps
+```
+
 3. Cell rise delay = time(50% output rise) - time(50% input fall)
+```
+Cell rise delay = (2.20636 - 2.15) = 56.36ps
+```
+
 4. Cell fall delay = time(50% output fall) - time(50% input rise)
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/50_rise_and_fall_input.jpeg)
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/50_rise_and_fall_output.jpeg)
+```
+Cell fall delay = (4.07479 - 4.05) = 24.79ps
+```
+
 
 # Layout using OpenLane
 The layout is generated using OpenLane. To run a custom design on OpenLane, navigate to the openlane folder and run the following commands:
