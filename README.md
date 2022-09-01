@@ -216,7 +216,7 @@ $ cd vsdstdcelldesign
 $  cp ./libs/sky130A.tech sky130A.tech
 $ magic -T sky130A.tech sky130_inv.mag &
 ```
-
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/inverter.jpeg)
 
 
 To extract Spice netlist, Type the following commands in tcl window.
@@ -227,26 +227,33 @@ To extract Spice netlist, Type the following commands in tcl window.
 % ext2spice
 ```
 "cthresh 0 rthresh 0" is used to extract parasitic capacitances from the cell.
-
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/cthresh_rthresh.jpeg)
 
 
 Open the terminal in the directory where ngspice is stored and type the following command to open the ngspice console:
 ```
 $ ngspice sky130_inv.spice 
 ```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/ngspice.jpeg)
 
 
 Now plot the graphs for the designed inverter model using the following command:
 ```
 plot y vs time a
 ```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/ngspice_waveform.jpeg)
+
 
 ## Rise time and Fall time
 Four timing parameters are used to characterize the inverter standard cell:
 1. Rise time: Time taken for the output to rise from 20% of max value to 80% of max value
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/rise_time.jpeg)
 2. Fall time- Time taken for the output to fall from 80% of max value to 20% of max value
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/fall_time.jpeg)
 3. Cell rise delay = time(50% output rise) - time(50% input fall)
 4. Cell fall delay = time(50% output fall) - time(50% input rise)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/50_rise_and_fall_input.jpeg)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/50_rise_and_fall_output.jpeg)
 
 # Layout using OpenLane
 The layout is generated using OpenLane. To run a custom design on OpenLane, navigate to the openlane folder and run the following commands:
@@ -269,11 +276,14 @@ Navigate to the openlane folder in terminal and give the following command :
 ```
 $ make mount (or use sudo as prefix)
 ```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/layout1.jpeg)
+
 
 After entering the openlane container give the following command:
 ```
 $ ./flow.tcl -interactive
 ```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/layout2.jpeg)
 
 
 This command will take you into the tcl console. In the tcl console type the following commands:
@@ -281,6 +291,8 @@ This command will take you into the tcl console. In the tcl console type the fol
 % package require openlane 0.9
 % prep -design iiitb_riscv32im5.v
 ```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/layout3.jpeg)
+
 
 The following commands are to merge external the lef files to the merged.nom.lef. In our case sky130_vsdiat is getting merged to the lef file
 
