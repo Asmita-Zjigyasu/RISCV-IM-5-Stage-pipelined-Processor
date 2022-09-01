@@ -248,22 +248,22 @@ plot y vs time a
 Four timing parameters are used to characterize the inverter standard cell:
 1. Rise time: Time taken for the output to rise from 20% of max value to 80% of max value
 ```
-Rise time = (2.23843 - 2.17935) = 59.08ps
+Rise time = (2.2 - 2.1) = 100ps
 ```
 
 2. Fall time- Time taken for the output to fall from 80% of max value to 20% of max value
 ```
-Fall time = (4.09291 - 4.05004) = 42.87ps
+Fall time = (4.066 - 4.0) = 66ps
 ```
 
 3. Cell rise delay = time(50% output rise) - time(50% input fall)
 ```
-Cell rise delay = (2.20636 - 2.15) = 56.36ps
+Cell rise delay = (2.150 - 2.076) = 74ps
 ```
 
 4. Cell fall delay = time(50% output fall) - time(50% input rise)
 ```
-Cell fall delay = (4.07479 - 4.05) = 24.79ps
+Cell fall delay = (4.0 - 3.983) = 17ps
 ```
 
 
