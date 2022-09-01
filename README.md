@@ -116,7 +116,7 @@ gtkwave test.vcd
 * We can observe that the simulation results are same as before synthesis.
 
 
-#Advanced Physical Design using OpenLane/Sky130 Workshop simulations and Results 
+# Advanced Physical Design using OpenLane/Sky130 Workshop simulations and Results 
 
 ## Docker Installation
 ```
@@ -206,12 +206,88 @@ $ sudo apt-get install ngspice
 ```
 
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/62461290/184837511-a29ecb45-d974-4053-8a1b-7f27b42759d0.png"> <br>
-</p>
+# Creating a Custom Inverter Cell
+
+Open Terminal in the folder you want to create the custom inverter cell and run the following commands:
+
+```
+$ git clone https://github.com/nickson-jose/vsdstdcelldesign.git
+$ cd vsdstdcelldesign
+$  cp ./libs/sky130A.tech sky130A.tech
+$ magic -T sky130A.tech sky130_inv.mag &
+```
 
 
 
+To extract Spice netlist, Type the following commands in tcl window.
+
+```
+% extract all
+% ext2spice cthresh 0 rthresh 0
+% ext2spice
+```
+"cthresh 0 rthresh 0" is used to extract parasitic capacitances from the cell.
+
+
+
+Open the terminal in the directory where ngspice is stored and type the following command to open the ngspice console:
+```
+$ ngspice sky130_inv.spice 
+```
+
+
+Now plot the graphs for the designed inverter model using the following command:
+```
+plot y vs time a
+```
+
+## Rise time and Fall time
+Four timing parameters are used to characterize the inverter standard cell:
+1. Rise time: Time taken for the output to rise from 20% of max value to 80% of max value
+2. Fall time- Time taken for the output to fall from 80% of max value to 20% of max value
+3. Cell rise delay = time(50% output rise) - time(50% input fall)
+4. Cell fall delay = time(50% output fall) - time(50% input rise)
+
+# Layout using OpenLane
+The layout is generated using OpenLane. To run a custom design on OpenLane, navigate to the openlane folder and run the following commands:
+```
+$ cd designs
+$ mkdir iiitb_riscv32im5
+$ cd iiitb_riscv32im5
+$ mkdir src
+$ touch config.json
+$ cd src
+$ touch iiitb_riscv32im5.v
+```
+
+
+The iiitb_riscv32im5.v file should contain the verilog RTL code you have used and got the post synthesis simulation for.
+
+Copy "sky130_fd_sc_hd__fast.lib", "sky130_fd_sc_hd__slow.lib", "sky130_fd_sc_hd__typical.lib" and "sky130_vsdinv.lef" files to src folder in your design.
+
+Navigate to the openlane folder in terminal and give the following command :
+```
+$ make mount (or use sudo as prefix)
+```
+
+After entering the openlane container give the following command:
+```
+$ ./flow.tcl -interactive
+```
+
+
+This command will take you into the tcl console. In the tcl console type the following commands:
+```
+% package require openlane 0.9
+% prep -design iiitb_riscv32im5.v
+```
+
+The following commands are to merge external the lef files to the merged.nom.lef. In our case sky130_vsdiat is getting merged to the lef file
+
+```
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+```
 
 # Contibutors
 * Mayank Kabra, Student, IIIT Bangalore
