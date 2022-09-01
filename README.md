@@ -116,6 +116,102 @@ gtkwave test.vcd
 * We can observe that the simulation results are same as before synthesis.
 
 
+#Advanced Physical Design using OpenLane/Sky130 Workshop simulations and Results 
+
+## Docker Installation
+```
+$ sudo apt-get remove docker docker-engine docker.io containerd runc (removes older version of docker if installed)
+$ sudo apt-get update
+$ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+$ sudo mkdir -p /etc/apt/keyrings
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+$ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null  
+$ sudo apt-get update
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+$ apt-cache madison docker-ce (copy the version string you want to install)
+$ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io docker-compose-plugin (paste the version string copies in place of <VERSION_STRING>)
+$ sudo docker run hello-world (If the docker is successfully installed u will get a success message here)
+```
+
+## OpenLane Installation
+```
+$ git clone https://github.com/The-OpenROAD-Project/OpenLane.git
+$ cd OpenLane/
+$ make
+$ make test
+```
+
+## Magic Installation
+
+For proper installation and workig of Magic, the following softwares have to be installed first:
+
+### Installing csh
+```
+$ sudo apt-get install csh
+```
+
+### Installing x11/xorg
+```
+$ sudo apt-get install x11
+$ sudo apt-get install xorg
+$ sudo apt-get install xorg openbox
+```
+
+### Installing GCC
+```
+$ sudo apt-get install gcc
+```
+
+### Installing build-essential
+```
+$ sudo apt-get install build-essential
+```
+
+### Installing OpenGL
+```
+$ sudo apt-get install freeglut3-dev
+```
+
+### Installing tcl/tk
+```
+$ sudo apt-get install tcl-dev tk-dev
+```
+### Installing magic
+After all the softwares are installed, run the following commands for installing magic:
+
+```
+$ git clone https://github.com/RTimothyEdwards/magic
+$ cd magic
+$ ./configure
+$ make
+$ make install
+```
+
+## Klayout Installation
+
+```
+$ sudo apt-get install klayout
+```
+
+## ngspice Installation
+
+```
+$ sudo apt-get install ngspice
+```
+
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/62461290/184837511-a29ecb45-d974-4053-8a1b-7f27b42759d0.png"> <br>
+</p>
+
+
+
 
 # Contibutors
 * Mayank Kabra, Student, IIIT Bangalore
