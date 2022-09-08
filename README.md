@@ -313,6 +313,21 @@ set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
 ```
 
+## Config.jason file
+
+//pink text file
+
+## Running the synthesis, floorplan, placement commands
+//openlane container
+//%run synthesis picture
+
+## Setup and Hold Slack after synthesis
+//timing image
+
+
+## Floorplan Reports - Die Area
+//4 column image
+
 # Contibutors
 * Mayank Kabra, Student, IIIT Bangalore
 * Asmita Zjigyasu, Student, IIIT Bangalore
