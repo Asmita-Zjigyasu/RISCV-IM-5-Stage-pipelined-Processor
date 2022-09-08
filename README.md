@@ -315,7 +315,7 @@ add_lefs -src $lefs
 
 # Placement and Routing
 
-## Config.jason file
+## Config.json file
 
 //pink text file
 
