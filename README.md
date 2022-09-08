@@ -317,18 +317,17 @@ add_lefs -src $lefs
 
 ## Config.json file
 
-//pink text file
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img3.jpeg)
 
 ## Running the synthesis, floorplan, placement commands
-//openlane container
-//%run synthesis picture
+![Image]https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img1.jpeg)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img2.jpeg)
 
 ## Setup and Hold Slack after synthesis
-//timing image
-
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img4.jpeg)
 
 ## Floorplan Reports - Die Area
-//4 column image
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img5.jpeg)
 
 # Contibutors
 * Mayank Kabra, Student, IIIT Bangalore
