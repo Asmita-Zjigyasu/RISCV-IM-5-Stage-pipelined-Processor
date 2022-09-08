@@ -320,7 +320,7 @@ add_lefs -src $lefs
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img3.jpeg)
 
 ## Running the synthesis, floorplan, placement commands
-![Image]https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img1.jpeg)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img1.jpeg)
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img2.jpeg)
 
 ## Setup and Hold Slack after synthesis
