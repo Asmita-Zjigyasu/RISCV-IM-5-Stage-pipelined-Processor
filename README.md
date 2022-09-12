@@ -216,7 +216,7 @@ $ cd vsdstdcelldesign
 $  cp ./libs/sky130A.tech sky130A.tech
 $ magic -T sky130A.tech sky130_inv.mag &
 ```
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/inverter.jpeg)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/custom_inverter_cell.png)
 
 
 To extract Spice netlist, Type the following commands in tcl window.
@@ -227,21 +227,49 @@ To extract Spice netlist, Type the following commands in tcl window.
 % ext2spice
 ```
 "cthresh 0 rthresh 0" is used to extract parasitic capacitances from the cell.
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/cthresh_rthresh.jpeg)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/cthresh0_rthresh0.png)
+
+### Spice Netlist:
+```
+* SPICE3 file created from sky130_inv.ext - technology: sky130A
+
+.option scale=0.01u
+.include ./libs/pshort.lib
+.include ./libs/nshort.lib
+
+
+M1001 Y A VGND VGND nshort_model.0 ad=1435 pd=152 as=1365 ps=148 w=35 l=23
+M1000 Y A VPWR VPWR pshort_model.0 ad=1443 pd=152 as=1517 ps=156 w=37 l=23
+VDD VPWR 0 3.3V
+VSS VGND 0 0V
+Va A VGND PULSE(0V 3.3V 0 0.1ns 0.1ns 2ns 4ns)
+C0 Y VPWR 0.08fF
+C1 A Y 0.02fF
+C2 A VPWR 0.08fF
+C3 Y VGND 0.18fF
+C4 VPWR VGND 0.74fF
+
+
+.tran 1n 20n
+.control
+run
+.endc
+.end
+```
 
 
 Open the terminal in the directory where ngspice is stored and type the following command to open the ngspice console:
 ```
 $ ngspice sky130_inv.spice 
 ```
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/ngspice.jpeg)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/sky130_inv(spice).png)
 
 
 Now plot the graphs for the designed inverter model using the following command:
 ```
 plot y vs time a
 ```
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/ngspice_waveform.jpeg)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/plot_y_vs_time_a.png)
 
 
 ## Rise time and Fall time
@@ -265,6 +293,27 @@ Cell rise delay = (2.150 - 2.076) = 74ps
 ```
 Cell fall delay = (4.0 - 3.983) = 17ps
 ```
+To get a grid and to ensure the ports are placed correctly we can use
+
+```
+% grid 0.46um 0.34um 0.23um 0.17um
+```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/custom_inv_cell_grid.png)
+To save the file with a different name, use the folllowing command in tcl window:
+```
+% save sky130_vsdinv.mag
+```
+Now open the sky130_vsdinv.mag using the magic command in terminal
+```
+$ magic -T sky130A.tech sky130_vsdinv.mag
+```
+
+In the tcl command type the following command to generate sky130_vsdinv.lef:
+```
+% lef write
+```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/lef-.png)
+A sky130_vsdinv.lef file will be created.
 
 
 # Layout using OpenLane
@@ -284,18 +333,47 @@ The iiitb_riscv32im5.v file should contain the verilog RTL code you have used an
 
 Copy "sky130_fd_sc_hd__fast.lib", "sky130_fd_sc_hd__slow.lib", "sky130_fd_sc_hd__typical.lib" and "sky130_vsdinv.lef" files to src folder in your design.
 
+Final src folder should look like this:
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/final_src_folder.png)
+
+The contents of the config.json are as follows:
+```
+{
+    "DESIGN_NAME": "top",
+    "VERILOG_FILES": "dir::src/iiitb_riscv.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_NET": "clk",
+    "GLB_RESIZER_TIMING_OPTIMIZATIONS": true,
+    "CLOCK_PERIOD": 10,
+    "PL_TARGET_DENSITY": 0.4,
+    "FP_SIZING" : "relative",
+    "pdk::sky130*": {
+        "FP_CORE_UTIL": 30,
+        "scl::sky130_fd_sc_hd": {
+            "FP_CORE_UTIL": 20
+        }
+    },
+    
+    "LIB_SYNTH": "dir::src/sky130_fd_sc_hd__typical.lib",
+    "LIB_FASTEST": "dir::src/sky130_fd_sc_hd__fast.lib",
+    "LIB_SLOWEST": "dir::src/sky130_fd_sc_hd__slow.lib",
+    "LIB_TYPICAL": "dir::src/sky130_fd_sc_hd__typical.lib",  
+    "TEST_EXTERNAL_GLOB": "dir::../iiitb_riscv32im5/src/*"
+}
+```
+
 Navigate to the openlane folder in terminal and give the following command :
 ```
 $ make mount (or use sudo as prefix)
 ```
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/layout1.jpeg)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/make_mount.png)
 
 
 After entering the openlane container give the following command:
 ```
 $ ./flow.tcl -interactive
 ```
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/layout2.jpeg)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/flow_tcl.png)
 
 
 This command will take you into the tcl console. In the tcl console type the following commands:
@@ -303,7 +381,7 @@ This command will take you into the tcl console. In the tcl console type the fol
 % package require openlane 0.9
 % prep -design iiitb_riscv32im5
 ```
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/layout3.jpeg)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/prep_design.png)
 
 
 The following commands are to merge external the lef files to the merged.nom.lef. In our case sky130_vsdiat is getting merged to the lef file
@@ -312,22 +390,58 @@ The following commands are to merge external the lef files to the merged.nom.lef
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
 ```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/set_lefs.png)
 
-# Placement and Routing
+# Synthesis
+```
+% run_synthesis
+```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/run_synthesis.png)
+## Synthesis Reports
 
-## Config.json file
+Details of all the gates used:
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/synthesis_reports.png)
+Chip Area and vsdinv:
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/synthesis_report2.png)
 
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img3.jpeg)
+# Floorplan
+```
+% run_floorplan
+```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/run_floorplan.png)
 
-## Running the synthesis, floorplan, placement commands
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img1.jpeg)
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img2.jpeg)
+## Floorplan Reports
 
-## Setup and Hold Slack after synthesis
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img4.jpeg)
+Die Area:
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/die_area.png)
 
-## Floorplan Reports - Die Area
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/img5.jpeg)
+Core Area
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/core_area.png)
+
+# Placement
+```
+% run_placement
+```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/run_placement.png)
+
+The sky130_vsdinv should also reflect in your netlist after placement:
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/vsd_inv_in_topmodule.png)
+
+# Clock Tree Synthesis
+```
+% run_cts
+```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/run_cts.png)
+
+# Routing
+```
+% run_routing
+```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/run_routing.png)
+
+The sky130_vsdinv should also reflect in your netlist after routing
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/top_resized.png)
+
 
 # Contibutors
 * Mayank Kabra, Student, IIIT Bangalore
