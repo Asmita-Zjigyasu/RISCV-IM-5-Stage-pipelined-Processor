@@ -227,6 +227,7 @@ To extract Spice netlist, Type the following commands in tcl window.
 % ext2spice
 ```
 "cthresh 0 rthresh 0" is used to extract parasitic capacitances from the cell.
+
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/cthresh0_rthresh0.png)
 
 ### Spice Netlist:
@@ -403,7 +404,9 @@ add_lefs -src $lefs
 Details of all the gates used:
 
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/synthesis_reports.png)
+
 Chip Area and vsdinv:
+
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/synthesis_report2.png)
 
 # Floorplan
