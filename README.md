@@ -334,6 +334,7 @@ The iiitb_riscv32im5.v file should contain the verilog RTL code you have used an
 Copy "sky130_fd_sc_hd__fast.lib", "sky130_fd_sc_hd__slow.lib", "sky130_fd_sc_hd__typical.lib" and "sky130_vsdinv.lef" files to src folder in your design.
 
 Final src folder should look like this:
+
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/final_src_folder.png)
 
 The contents of the config.json are as follows:
@@ -400,6 +401,7 @@ add_lefs -src $lefs
 ## Synthesis Reports
 
 Details of all the gates used:
+
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/synthesis_reports.png)
 Chip Area and vsdinv:
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/synthesis_report2.png)
@@ -413,9 +415,11 @@ Chip Area and vsdinv:
 ## Floorplan Reports
 
 Die Area:
+
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/die_area.png)
 
-Core Area
+Core Area:
+
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/core_area.png)
 
 # Placement
@@ -425,6 +429,7 @@ Core Area
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/run_placement.png)
 
 The sky130_vsdinv should also reflect in your netlist after placement:
+
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/vsd_inv_in_topmodule.png)
 
 # Clock Tree Synthesis
@@ -439,7 +444,8 @@ The sky130_vsdinv should also reflect in your netlist after placement:
 ```
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/run_routing.png)
 
-The sky130_vsdinv should also reflect in your netlist after routing
+The sky130_vsdinv should also reflect in your netlist after routing:
+
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/top_resized.png)
 
 
