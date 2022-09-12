@@ -300,6 +300,7 @@ To get a grid and to ensure the ports are placed correctly we can use
 % grid 0.46um 0.34um 0.23um 0.17um
 ```
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/custom_inv_cell_grid.png)
+
 To save the file with a different name, use the folllowing command in tcl window:
 ```
 % save sky130_vsdinv.mag
@@ -314,6 +315,7 @@ In the tcl command type the following command to generate sky130_vsdinv.lef:
 % lef write
 ```
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/lef-.png)
+
 A sky130_vsdinv.lef file will be created.
 
 
@@ -399,6 +401,7 @@ add_lefs -src $lefs
 % run_synthesis
 ```
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/run_synthesis.png)
+
 ## Synthesis Reports
 
 Details of all the gates used:
