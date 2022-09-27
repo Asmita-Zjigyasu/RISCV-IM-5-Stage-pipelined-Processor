@@ -436,7 +436,7 @@ Core Area:
 
 The sky130_vsdinv should also reflect in your netlist after placement:
 
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/vsd_inv_in_topmodule.png)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/vsd_inv_in_placement.png)
 
 # Clock Tree Synthesis
 ```
