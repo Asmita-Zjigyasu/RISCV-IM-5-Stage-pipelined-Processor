@@ -100,10 +100,10 @@ The processor has been tested on several C programs, providing the correct outpu
 ```
 script yosys_run.sh
 ```
-[//]: <> (6. We can view the statistics of the netlist by typing "stat".
-## Screenshots of the statistics of our design iiitb_riscv32im5
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/stat_1.png)
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/stat_2.png))
+<!-- 6. We can view the statistics of the netlist by typing "stat".-->
+<!-- Screenshots of the statistics of our design iiitb_riscv32im5-->
+<!-- ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/stat_1.png)-->
+<!-- ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/stat_2.png)-->
 
 6. To test the post synthesis design execute the following commands
 ```
