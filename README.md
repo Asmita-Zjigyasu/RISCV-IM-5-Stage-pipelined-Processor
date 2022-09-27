@@ -506,7 +506,7 @@ OpenSTA> set_propagated_clock [all_clocks]
 OpenSTA> report_checks 
 
 ```
-![Image]([report_checks image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/performance.png))
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/performance.png)
 
 **Performance = 1/(clock period - slack) = 1/(10 - 5.64)ns = 229.357Mhz**
 
