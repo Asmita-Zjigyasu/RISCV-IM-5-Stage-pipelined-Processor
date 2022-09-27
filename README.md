@@ -494,9 +494,9 @@ $ magic -T /home/asmita/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech 
 ## 5. Power (internal, switching, leakage and total)
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/power_consumption.png)
 
-**Internal Power = 23 mili Watt (73.2%)**
-**Switching Power = 8.44 mili Watt (26.8%)**
-**Leakage Power = 146 nano Watt (0.00%)**
+**Internal Power = 23 mili Watt (73.2%)** <br/>
+**Switching Power = 8.44 mili Watt (26.8%)** <br/>
+**Leakage Power = 146 nano Watt (0.00%)** <br/>
 **Total Power = 31.5 mili Watt (100%)**
 
 
