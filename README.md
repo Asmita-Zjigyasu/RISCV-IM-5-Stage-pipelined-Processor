@@ -489,7 +489,7 @@ $ magic -T /home/asmita/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech 
 ## 4. Flop/standard cell ratio
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/flip_flop_ratio.png)
 
-**Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 2958/28907 = 0.1023281**
+**Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 2958 / 28907 = 0.1023281**
 
 ## 5. Power (internal, switching, leakage and total)
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/power_consumption.png)
