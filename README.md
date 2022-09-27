@@ -465,14 +465,11 @@ All the steps will be automated and all the files will be generated.
 ```
 $ ./flow.tcl -design iiitb_riscv32im
 ```
-![Image](entire flow image)
-
 
 We can open the mag file and view the layout after the whole process by the following command:
 ```
 $ magic -T /home/asmita/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech top.mag &
 ```
-![Image](magic ka image)
 
 # Results post-layout
 
@@ -485,6 +482,34 @@ $ magic -T /home/asmita/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech 
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/magic_area_tcl.png)
 
 **Area = 1513413.624 um^2**
+
+## 3. Performance
+Commands to be run in terminal:
+
+```
+$ sta 
+
+OpenSTA> read_liberty -max /home/asmita/ASIC/OpenLane/designs/iiitb_riscv32im5/src/sky130_fd_sc_hd__fast.lib 
+
+OpenSTA> read_liberty -min /home/asmita/ASIC/OpenLane/designs/iiitb_riscv32im5/src/sky130_fd_sc_hd__slow.lib 
+
+OpenSTA> read_verilog /home/asmita/ASIC/OpenLane/designs/iiitb_riscv32im5/runs/RUN_2022.09.27_18.04.53/results/routing/top.resized.v 
+
+OpenSTA> link_design top
+
+OpenSTA> read_sdc /home/asmita/ASIC/OpenLane/designs/iiitb_riscv32im5/runs/RUN_2022.09.27_18.04.53/results/cts/top.sdc 
+
+OpenSTA> read_spef /home/asmita/ASIC/OpenLane/designs/iiitb_riscv32im5/runs/RUN_2022.09.27_18.04.53/results/routing/top.nom.spef 
+
+OpenSTA> set_propagated_clock [all_clocks] 
+
+OpenSTA> report_checks 
+
+```
+![Image]([report_checks image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/performance.png))
+
+**Performance = 1/(clock period - slack) = 1/(10 - 5.64)ns = 229.357Mhz**
+
 
 ## 4. Flop/standard cell ratio
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/flip_flop_ratio.png)
