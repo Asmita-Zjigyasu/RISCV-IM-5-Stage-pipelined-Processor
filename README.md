@@ -459,10 +459,53 @@ We can open the def file and view the layout after the routing process by the fo
 $ magic -T /home/asmita/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read top.def &
 ```
 
-## One command for the entire flow
+## NOTE - One command for the entire flow
+
+All the steps will be automated and all the files will be generated.
 ```
 $ ./flow.tcl -design iiitb_riscv32im
 ```
+![Image](entire flow image)
+
+
+We can open the mag file and view the layout after the whole process by the following command:
+```
+$ magic -T /home/asmita/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech top.mag &
+```
+![Image](magic ka image)
+
+# Results post-layout
+
+## 1. Post Layout synthesis gate count
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/Post_Layout_synthesis_gate_count.png)
+
+**Gate Count = 28907**
+
+## 2. Area (box command)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/magic_area_tcl.png)
+
+**Area = 1513413.624 um^2**
+
+## 4. Flop/standard cell ratio
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/flip_flop_ratio.png)
+
+**Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 2958/28907 = 0.1023281**
+
+## 5. Power (internal, switching, leakage and total)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/power_consumption.png)
+
+**Internal Power = 23 mili Watt (73.2%)**
+**Switching Power = 8.44 mili Watt (26.8%)**
+**Leakage Power = 146 nano Watt (0.00%)**
+**Total Power = 31.5 mili Watt (100%)**
+
+
+
+
+
+
+
+
 
 
 # Contibutors
