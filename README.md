@@ -406,11 +406,11 @@ add_lefs -src $lefs
 
 Details of all the gates used:
 
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/synthesis_reports.png)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/synth_stat1.png)
 
 Chip Area and vsdinv:
 
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/synthesis_report2.png)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/synth_stat2.png)
 
 # Floorplan
 ```
@@ -432,7 +432,7 @@ Core Area:
 ```
 % run_placement
 ```
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/run_placement.png)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/run_placment.png)
 
 The sky130_vsdinv should also reflect in your netlist after placement:
 
@@ -453,6 +453,16 @@ The sky130_vsdinv should also reflect in your netlist after placement:
 The sky130_vsdinv should also reflect in your netlist after routing:
 
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/top_resized.png)
+
+We can open the def file and view the layout after the routing process by the following command:
+```
+$ magic -T /home/asmita/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read top.def &
+```
+
+## One command for the entire flow
+```
+$ ./flow.tcl -design iiitb_riscv32im
+```
 
 
 # Contibutors
