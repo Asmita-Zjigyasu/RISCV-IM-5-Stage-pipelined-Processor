@@ -348,7 +348,7 @@ The contents of the config.json are as follows:
     "CLOCK_PORT": "clk",
     "CLOCK_NET": "clk",
     "GLB_RESIZER_TIMING_OPTIMIZATIONS": true,
-    "CLOCK_PERIOD": 10,
+    "CLOCK_PERIOD": 30,
     "PL_TARGET_DENSITY": 0.4,
     "FP_SIZING" : "relative",
     "pdk::sky130*": {
