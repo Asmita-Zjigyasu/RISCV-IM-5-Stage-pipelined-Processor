@@ -465,6 +465,9 @@ All the steps will be automated and all the files will be generated.
 ```
 $ ./flow.tcl -design iiitb_riscv32im
 ```
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/fullflow1.png)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/fullflow2.png)
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/fullflow3.png)
 
 We can open the mag file and view the layout after the whole process by the following command:
 ```
@@ -485,6 +488,8 @@ $ magic -T /home/asmita/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech 
 
 ## 3. Performance
 Commands to be run in terminal:
+
+**Change commands according to the path of the OpenLane folder and the RUN folder in your machine.**
 
 ```
 $ sta 
