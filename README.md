@@ -511,9 +511,12 @@ OpenSTA> set_propagated_clock [all_clocks]
 OpenSTA> report_checks 
 
 ```
-I was not able to run the report_checks command on my machine as it was getting hanged again and again. So, I had to use the college PC to run OPENSTA flow on the design's RUN.
+
+I was not able to run the report_checks command on my machine as it was getting hanged again and again. So, I had to use the college PC to run OPENSTA flow on the design's RUN. I have shown my name in the text file here.
+
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/performance1.jpeg)
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/slack1.jpeg)
+
 **Clock period of the design = 30ns**
 **Performance = 1/(clock period - slack) = 1/(30 - 10.17)ns = 504.2864Mhz**
 
