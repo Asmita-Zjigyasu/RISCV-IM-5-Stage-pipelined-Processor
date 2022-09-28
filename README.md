@@ -517,7 +517,7 @@ I was not able to run the report_checks command on my machine as it was getting 
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/performance1.jpeg)
 ![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/slack1.jpeg)
 
-**Clock period of the design = 30ns**
+**Clock period of the design = 30ns** <br/>
 **Performance = 1/(clock period - slack) = 1/(30 - 10.17)ns = 504.2864Mhz**
 
 
