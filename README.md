@@ -511,8 +511,11 @@ OpenSTA> set_propagated_clock [all_clocks]
 OpenSTA> report_checks 
 
 ```
-![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/performance.png)
-**Performance = 1/(clock period - slack) = 1/(10 - 5.64)ns = 229.357Mhz**
+I was not able to run the report_checks command on my machine as it was getting hanged again and again. So, I had to use the college PC to run OPENSTA flow on the design's RUN.
+![Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/report_checks.png)
+!Image](https://github.com/Asmita-Zjigyasu/iiitb_riscv32im5/blob/main/Images/slack.png)
+**Clock period of the design = 30ns**
+**Performance = 1/(clock period - slack) = 1/(30 - 10.86)ns = 522.46Mhz**
 
 
 ## 4. Flop/standard cell ratio
